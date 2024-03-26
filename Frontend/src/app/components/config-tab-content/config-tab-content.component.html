@@ -1,0 +1,14 @@
+<div class="div-page">
+    <h3  class="title-1">Filtered films:</h3>
+    <h3 class="title-1">{{filmAmount}}</h3>
+</div>
+<div>
+    <h3 class="title-1">Select films:</h3>
+    <mat-form-field color="warn" appearance="outline">
+        <mat-select [(value)]="randomAmount" (selectionChange)="onSelectionChange($event)">
+          @for (amount of selectAmount; track amount) {
+            <mat-option [value]="amount">{{ amount }}</mat-option>
+          }
+        </mat-select>
+    </mat-form-field>
+</div>

@@ -1,0 +1,99 @@
+<div class="div-page">
+    <div class="page-content">
+        <div *ngIf="showFilms">
+            <div class="list-title">
+                <h1 class="title-1">{{currentRounds[roundIndex]}}</h1>
+            </div>
+
+            <div>
+                <h3 class="title-2">{{pairIndex + 1}}/{{stages[currentRounds[roundIndex]].length}}</h3>
+            </div>
+
+            <div class="pair">
+                <div class="film-item" *ngFor="let film of stages[currentRounds[roundIndex]][pairIndex]">
+                    <div class="poster" 
+                    [matTooltip]="film.filmName"
+                    matTooltipPosition="above"
+                    matTooltipShowDelay="200"
+                    matTooltipHideDelay="200">
+                        <img 
+                        [(src)]="film.filmImgUrl" 
+                        width="230" 
+                        height="345" 
+                        [(alt)]="film.filmName"
+                        class="film-img">
+                        <a (click)="chooseFilm(film)"
+                        class="frame"
+                        target="_blank">
+                            <span class="frame-border"></span>
+                            <span class="overlay-actions">
+                                <span class="action-buttons">
+                                    <button mat-icon-button class="film-action-button" 
+                                    (click)="openPage(film.filmPage)">
+                                        <mat-icon class="film-action-icon">open_in_new</mat-icon>
+                                    </button>
+                                    <button mat-icon-button class="film-action-button" 
+                                    (click)="openPage(film.filmStreaming)">
+                                        <mat-icon class="film-action-icon">movies</mat-icon>
+                                    </button>
+                                    <button mat-icon-button class="film-action-button"
+                                    (click)="switchWatched(film)">
+                                        <mat-icon [class]="!film.filmWatched ? 'film-action-icon' : 'film-action-icon-green'">
+                                            {{film.filmWatched ? "visibility_off" : "visibility"}}</mat-icon>
+                                    </button>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div *ngIf="showWinner">
+            <div class="list-title">
+                <h1 class="title-3">Winner</h1>
+            </div>
+
+            <div>
+                <div class="film-item">
+                    <div class="poster" 
+                    [matTooltip]="winnerList[0].filmName"
+                    matTooltipPosition="above"
+                    matTooltipShowDelay="200"
+                    matTooltipHideDelay="200">
+                        <img 
+                        [src]="winnerList[0].filmImgUrl" 
+                        width="230" 
+                        height="345"
+                        [alt]="winnerList[0].filmName"
+                        class="film-img">
+                        <a (click)="openPage(winnerList[0].filmPage); pageOpened = true" 
+                        class="frame"
+                        target="_blank">
+                            <span class="frame-border"></span>
+                            <span class="overlay-actions">
+                                <span class="action-buttons">
+                                    <button mat-icon-button class="film-action-button" 
+                                    (click)="openPage(winnerList[0].filmPage)">
+                                        <mat-icon class="film-action-icon">open_in_new</mat-icon>
+                                    </button>
+                                    <button mat-icon-button class="film-action-button" 
+                                    (click)="openPage(winnerList[0].filmStreaming)">
+                                        <mat-icon class="film-action-icon">movies</mat-icon>
+                                    </button>
+                                    <button mat-icon-button class="film-action-button"
+                                    (click)="switchWatched(winnerList[0])">
+                                        <mat-icon [class]="!winnerList[0].filmWatched ? 'film-action-icon' : 'film-action-icon-green'">
+                                            {{winnerList[0].filmWatched ? "visibility_off" : "visibility"}}</mat-icon>
+                                    </button>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,74 @@
+.mat-toolbar {
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    background: #14181c;
+  }
+  
+  .mat-icon {
+    cursor: pointer;
+  }
+
+.logo {
+  background-position: -350px 0;
+  /* height: 25px; */
+  position: relative;
+  width: 273px;
+}
+
+.header-section {
+  /* height: 72px; */
+  margin: 0 auto;   
+  position: relative;
+  justify-content: space-between;
+  width: 950px;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.nav-div {
+  position: absolute;
+  right: 110px;
+  top: 21px;
+}
+
+.nav-item {
+  display: block;
+  float: left;
+  font-size: 1rem;
+  letter-spacing: .07692308em;
+  line-height: 17px;
+  margin-left: 15px;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #9ab;
+  display: block;
+  font-family: Graphik-Semibold-Web,sans-serif;
+  font-weight: 400;
+  padding-top: 6px;
+  text-decoration: none;
+}
+
+span {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+.start-button {
+  margin-left: 15px;
+  top: -5px
+}

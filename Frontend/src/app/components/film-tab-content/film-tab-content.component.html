@@ -1,0 +1,73 @@
+<div class="div-page">
+    <div class="page-content">
+        <div>
+            <section class="films">
+                <div class="filter-sorter">
+                    <button mat-icon-button class="filter-button" (click)="hideUnUseFilms()">
+                        <mat-icon *ngIf="hideUnUse; else showUnUse">visibility_off</mat-icon>
+                        <ng-template #showUnUse><mat-icon>visibility</mat-icon></ng-template>
+                    </button>
+                </div>
+                <div class="list-title">
+					<h1 class="title-1">All films</h1>
+				</div>
+                <ul class="film-ul">
+                    <li class="film-item" *ngFor="let film of dataSource">
+                        <div class="poster" 
+                        [matTooltip]="film.filmName"
+                        matTooltipPosition="above"
+                        matTooltipShowDelay="200"
+                        matTooltipHideDelay="200">
+                            <img 
+                            [(src)]="film.filmImgUrl" 
+                            width="125" 
+                            height="187" 
+                            [(alt)]="film.filmName"
+                            class="film-img" [class.hide-poster]="!film.filmUse">
+                            <a (click)="(film.filmUse = (pageOpened ? film.filmUse : !film.filmUse)); switchUse(film)"
+                            class="frame"
+                            target="_blank">
+                                <span class="frame-border" [class.hide-border]="!film.filmUse"></span>
+                                <span class="overlay-actions">
+                                    <span class="action-buttons">
+                                        <button mat-icon-button class="film-action-button" 
+                                        (click)="openPage(film.filmPage)">
+                                            <mat-icon class="film-action-icon">open_in_new</mat-icon>
+                                        </button>
+                                        <button mat-icon-button class="film-action-button" 
+                                        (click)="openPage(film.filmStreaming)">
+                                            <mat-icon class="film-action-icon">movies</mat-icon>
+                                        </button>
+                                        <button mat-icon-button class="film-action-button"
+                                        (click)="switchWatched(film)">
+                                            <mat-icon [class]="!film.filmWatched ? 'film-action-icon' : 'film-action-icon-green'">
+                                                {{film.filmWatched ? "visibility_off" : "visibility"}}</mat-icon>
+                                        </button>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <mat-paginator class="pagin" [length]="dataSize" [pageSize]="50" [hidePageSize]="true"></mat-paginator>
+            </section>
+            <aside class="sidebar">
+                <section class="progress-panel">
+                    <div class="progress-status">
+                        <h3>
+                            You've watched 
+                            <span class="progress-counter">
+                                <span class="progress-count"><span class="js-progress-count">{{sidebar.watched}}</span> of {{sidebar.all}}</span>
+                            </span>
+                        </h3> 
+                        
+                        <p><span class="progress-percentage">{{sidebar.persent}}</span><span class="percent">%</span></p>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" [style.width.%]="sidebar.persent"></div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+</div>

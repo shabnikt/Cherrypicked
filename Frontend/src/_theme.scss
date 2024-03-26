@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use '../node_modules/@angular/material' as mat;
+@include mat.core();
+
+@import './colors';
+
+$app-primary: mat.define-palette($custom-brand-primary);
+$app-accent: mat.define-palette($custom-brand-accent);
+$app-warn: mat.define-palette($custom-brand-warn);
+
+$brand-dark-theme: mat.define-dark-theme((color:(primary: $app-primary, accent: $app-accent, warn: $app-warn)));
+
+@include mat.all-component-themes($brand-dark-theme);

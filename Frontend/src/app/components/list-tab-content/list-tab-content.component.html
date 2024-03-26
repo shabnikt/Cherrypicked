@@ -1,0 +1,39 @@
+<section class="list-set">
+@for (list of dataSource; track list) {
+    <section class="list-item">
+        <a class="list-link" [routerLink]="['/list', list.listAddress]" target="_blank">
+            <ul class="poster-list">
+                <div class="poster-container">
+                    @for (film of list.films.slice(0, 5); track film) {
+                        <li class="listitem-poster">
+                            <img [src]="film.filmImgUrl" [alt]="film.filmName" width="70" height="105" class="image">
+                        </li>
+                    }
+                    @for (idx of createEmptyFilms(list.films); track idx) {
+                        <li class="listitem-placeholder"></li>
+                    }
+                    <span class="frame-border"></span>
+                </div>
+            </ul>
+        </a>
+        <div class="list-elements">
+            <div class="list-labels"> 
+                <h2 class="list-title"> 
+                    <a [routerLink]="['/list', list.listAddress]" target="_blank">{{list.listName}}</a> 
+                </h2> 
+                <p class="list-length"> 
+                    <small class="value">{{list.films.length}} films</small> 
+                </p> 
+            </div>
+            <div class="list-toggle">
+                <mat-slide-toggle [(ngModel)]="list.listUse" color="warn" (change)="onToggleChange(list.pkList)">
+                </mat-slide-toggle>
+            </div>
+        </div>
+    </section>
+}
+</section>
+<mat-paginator class="pagin" [length]="dataSize" [pageSize]="7" [pageSizeOptions]="[5, 7, 10, 25, 50, 75, 100]"></mat-paginator>
+
+
+

@@ -1,0 +1,13 @@
+
+.div-page {
+    margin-top: 30px;
+}
+
+
+.title-1, .title-2, .title-3 {
+    line-height: 1.2;
+    margin: 0 0 10px;
+    color: #fff;
+    font-family: Graphik-Semibold-Web,sans-serif;
+    /* font-weight: 400; */
+}

@@ -1,0 +1,123 @@
+.list-set {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.list-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #2c3440;
+    padding-bottom: 15px;
+    height: 130px;
+    display: flex;
+}
+
+.list-link {
+    float: left;
+    margin: 0 15px 0 0;
+    width: 258px;
+}
+
+.list-elements {
+    display: flex;
+    width: 635px;
+    justify-content: space-between;
+}
+
+.list-labels {
+    /* width: 250px; */
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+}   
+
+.list-title {
+    margin: 5px 0 7px;
+    line-height: 1.2;
+    font-family: Graphik-Semibold-Web,sans-serif;
+    font-weight: 400;
+}
+
+.list-title a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.list-length {
+    color: #89a;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.list-toggle {
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.pagin {
+    background-color: transparent;
+    color: #678;
+}
+
+.frame-border {
+    border: 1px solid #def;
+    border-radius: 3px;
+    bottom: -3px;
+    box-shadow: inset 0 0 1px 1px rgba(20,24,28,.125);
+    display: block;
+    left: -3px;
+    overflow: hidden;
+    position: absolute;
+    right: -3px;
+    text-indent: 110%;
+    top: -3px;
+    transition: border .1s linear;
+    white-space: nowrap;
+
+}
+
+.frame-border:hover {
+    border-width: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+
+.poster-list {
+    width: auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    list-style: none;
+    /* margin-inline-start: 0px; */
+}
+
+.poster-container{
+    margin-left: -40px;
+}
+
+.listitem-poster {
+    box-shadow: -2px 0 7px #000;
+    margin-right: -23px;
+    float: left;
+    background: #161718;
+}
+
+.listitem-poster .image {
+    border-radius: 3px;
+    display: block;
+}
+
+.listitem-placeholder {
+    background-color: #111;
+    height: 105px;
+    width: 70px;
+    float: left;
+    box-shadow: inset 0 0 0 1px rgba(221,238,255,.1);
+    margin-right: -25px;
+}

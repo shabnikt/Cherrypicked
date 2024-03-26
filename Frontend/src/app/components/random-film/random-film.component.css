@@ -1,0 +1,152 @@
+.div-page {
+    padding: 100px 0;
+}
+
+.page-content {
+    margin: 0 auto;
+    width: 950px;
+    display: flex;
+    justify-content: center;
+}
+
+.title-1, .title-2, .title-3 {
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 0 10px;
+    color: #fff;
+    font-family: Graphik-Semibold-Web,sans-serif;
+    /* font-weight: 400; */
+}
+
+.title-3 {
+    margin: 0 0 30px;
+}
+
+.pair {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.film-item {
+    height: 345px;
+    width: 230px;
+    display: block;
+    margin: 0 10px 10px 10px;
+}
+
+.film-img {
+    border-radius: 3px;
+    display: block;
+}
+
+.hide-poster {
+    opacity: .2;
+    transition: all .1s linear;
+}
+
+.poster {
+    display: block;
+    height: 345px;
+    width: 230px;
+    background: #161718;
+    box-shadow: 0 1px 3px rgba(0,0,0,.35);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.frame {
+
+    background-clip: padding-box;
+    background-image: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.5) 50%,hsla(0,0%,100%,0));
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px #def;
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-indent: 110%;
+    top: 0;
+    white-space: nowrap;
+
+}
+
+.frame .frame-border {
+    border: 1px solid #def;
+    border-radius: 3px;
+    bottom: -3px;
+    box-shadow: inset 0 0 1px 1px rgba(20,24,28,.125);
+    display: block;
+    left: -3px;
+    overflow: hidden;
+    position: absolute;
+    right: -3px;
+    text-indent: 110%;
+    top: -3px;
+    transition: border .1s linear;
+    white-space: nowrap;
+
+}
+
+.frame:hover .hide-border {
+    border: 1px solid #f90349;
+    border-width: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.frame:hover .frame-border {
+    border-width: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.overlay-actions {
+    background: rgba(0,0,0,.8);
+    border-radius: 4px;
+    bottom: 12px;
+    height: 33px;
+    display: none;
+    left: 58%;
+    margin-left: -91px;
+    padding: 0;
+    position: absolute;
+    width: 146px;
+}
+
+.frame:hover .overlay-actions {
+    display: inline;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    float: left;
+    height: 36px;
+    width: 141px;
+}
+
+.film-action-button {
+    padding: 0;
+    height: 45px;
+    width: 45px;
+}
+
+.film-action-icon {
+    color: #c7d8e7;
+}
+
+.film-action-icon-green {
+    color: #f90349;
+}
