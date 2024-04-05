@@ -1,6 +1,6 @@
 # Cherrypicked
 
-The site is an application that uses data from your Letterboxd(script for exporting lists and filling the database) account and allows you to choose which movie you want to watch. You select lists of movies you're interested in, set up a random selection, and start picking a movie in pairs until there's one left.
+The site is an application that uses data from your Letterboxd([script for exporting lists and filling the database](https://github.com/shabnikt/Letterboxd-list-data-scraper)) account and allows you to choose which movie you want to watch. You select lists of movies you're interested in, set up a random selection, and start picking a movie in pairs until there's one left.
 
 The design is inspired by Letterboxd.
 
